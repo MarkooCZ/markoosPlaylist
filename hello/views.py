@@ -12,6 +12,9 @@ def index(request):
     # r = requests.get("https://api.spotify.com/v1/playlists/4fZIyJn2wKb51QPNnWYnqt", headers={"Content-Type" : "application/json", "Authorization":""})
     return render(request, "index.html")
 
+def loggedCallback(request):
+    token = request.GET.get("code")
+    return render(request, "index.html", {"token" : token})
 
 def db(request):
 
