@@ -4,6 +4,7 @@
 {% block content %}
 <script src="{% static 'spotifyHandler.js' %}"></script>
 <button type="button" class="btn btn-success" onclick="spotifyLogin()">Success</button>
+{{ key }}
 {% if code %}
 <b>
 <div>{{ code }}</div>

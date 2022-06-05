@@ -1,4 +1,5 @@
 import requests
+from django.conf import settings
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -10,7 +11,8 @@ def index(request):
     # print(r.text)
     # 4fZIyJn2wKb51QPNnWYnqt
     # r = requests.get("https://api.spotify.com/v1/playlists/4fZIyJn2wKb51QPNnWYnqt", headers={"Content-Type" : "application/json", "Authorization":""})
-    return render(request, "index.html")
+    key = settings.SECRET_KEY
+    return render(request, "index.html", {"key" : key})
 
 def loggedCallback(request):
     code = request.GET.get("code")
