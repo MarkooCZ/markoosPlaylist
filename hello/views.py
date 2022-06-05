@@ -8,6 +8,8 @@ from .models import Greeting
 def index(request):
     # r = requests.get('https://httpbin.org/status/418')
     # print(r.text)
+    # 4fZIyJn2wKb51QPNnWYnqt
+    # r = requests.get("https://api.spotify.com/v1/playlists/4fZIyJn2wKb51QPNnWYnqt", headers={"Content-Type" : "application/json", "Authorization":""})
     return render(request, "index.html")
 
 
