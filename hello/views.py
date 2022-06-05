@@ -1,4 +1,6 @@
 import requests
+import urllib
+import base64
 from django.conf import settings
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -11,11 +13,28 @@ def index(request):
     # print(r.text)
     # 4fZIyJn2wKb51QPNnWYnqt
     # r = requests.get("https://api.spotify.com/v1/playlists/4fZIyJn2wKb51QPNnWYnqt", headers={"Content-Type" : "application/json", "Authorization":""})
-    key = settings.SECRET_KEY
-    return render(request, "index.html", {"key" : key})
+    return render(request, "index.html")
 
 def loggedCallback(request):
+    secretKey = settings.SECRET_KEY
+    clientKey = settings.CLIENT_KEY
+
+    urlRequestToken = "https://accounts.spotify.com/api/token"
+    
     code = request.GET.get("code")
+    grantType = "authorization_code"
+    redirectURL = "https://markoosplaylist.herokuapp.com/logged"
+
+    dataToPass = { "grant_type" : grantType, "code" : code, "redirect_uri"}
+    dataToPass = urllib.urlencode(dataToPass)
+
+    authorization = "Basic " + clientKey + ":" + secretKey
+    authorization = base64.b64encode(authorization)
+
+    contentType = "application/x-www-form-urlencoded"
+
+    posted = requests.post(urlRequestToken, data=dataToPass, headers={"Authorization" : authorization, "Content-Type" : contentType})
+
     return render(request, "index.html", {"code" : code})
 
 def db(request):
