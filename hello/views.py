@@ -13,8 +13,8 @@ def index(request):
     return render(request, "index.html")
 
 def loggedCallback(request):
-    token = request.GET.get("code")
-    return render(request, "index.html", {"token" : token})
+    code = request.GET.get("code")
+    return render(request, "index.html", {"code" : code})
 
 def db(request):
 
