@@ -29,11 +29,11 @@ def loggedCallback(request):
     dataToPass = { "grant_type" : grantType, "code" : code, "redirect_uri" : redirectURL}
     dataToPass = urllib.parse.urlencode(dataToPass)
 
-    authorization = clientKey + ":" + secretKey
-    # authorization = authorization.encode("utf-8")
-    # authorization = base64.b64encode(authorization)
-    authorizationPayload = 'Basic ' + str(authorization)
-    # authorizationPayload = authorizationPayload.replace("\"", "")
+    authorization = str(clientKey + ":" + secretKey)
+    authorizationBytes = authorization.encode("utf-8")
+    authorizationBytes64 = base64.b64encode(authorizationBytes)
+    authorizationBytesDecoded = authorizationBytes64.decode("utf-8")
+    authorizationPayload = 'Basic ' + str(authorizationBytesDecoded)
 
     contentType = "application/x-www-form-urlencoded"
 
