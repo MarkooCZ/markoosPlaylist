@@ -7,6 +7,11 @@ function spotifyLogin()
 	 'Spotify Login', 'width=750, height=850');
 }
 
+window.onload = function()
+{
+	
+}
+
 window.addEventListener('message', event =>
 {
 	if (event.origin.startsWith('https://markoosplaylist.herokuapp.com'))
@@ -27,4 +32,4 @@ window.addEventListener('message', event =>
 	{
 		return;
 	}
-}
+});
