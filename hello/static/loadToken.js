@@ -6,6 +6,6 @@ window.onload = function()
 	var refreshToken = hiddenRT.data;
 	localStorage.setItem("acccessToken", accessToken);
 	localStorage.setItem("refreshToken", refreshToken);
-	window.postMessage("hi", "*");
+	window.opener.postMessage("hi", "*");
 	window.close()
 }
