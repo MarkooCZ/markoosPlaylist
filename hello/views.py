@@ -13,6 +13,10 @@ def index(request):
     # print(r.text)
     # 4fZIyJn2wKb51QPNnWYnqt
     # r = requests.get("https://api.spotify.com/v1/playlists/4fZIyJn2wKb51QPNnWYnqt", headers={"Content-Type" : "application/json", "Authorization":""})
+    m = "hello"
+    m = m.encode()
+    m = base64.b64encode(m)
+
     return render(request, "index.html")
 
 def loggedCallback(request):
