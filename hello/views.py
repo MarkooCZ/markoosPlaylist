@@ -39,7 +39,6 @@ def loggedCallback(request):
     grantMeToken = requests.post(urlRequestToken, data=dataToPass, headers={"Authorization" : authorizationPayload, "Content-Type" : contentType})
     grantMeToken = json.loads(grantMeToken.text)
     token = grantMeToken["access_token"]
-    tokenRefresh = grantMeToken["refresh_token"]
 
     return render(request, "loadToken.html", {"token" : token, "refreshToken" : tokenRefresh})
 
