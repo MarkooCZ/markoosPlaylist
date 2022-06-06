@@ -40,7 +40,7 @@ def loggedCallback(request):
     grantMeToken = json.loads(grantMeToken.text)
     token = grantMeToken["access_token"]
 
-    return render(request, "loadToken.html", {"token" : token, "refreshToken" : tokenRefresh})
+    return render(request, "loadToken.html", {"token" : token})
 
 def db(request):
 
