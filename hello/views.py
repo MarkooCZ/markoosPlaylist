@@ -27,7 +27,7 @@ def loggedCallback(request):
     redirectURL = "https://markoosplaylist.herokuapp.com/logged"
 
     dataToPass = { "grant_type" : grantType, "code" : code, "redirect_uri" : redirectURL}
-    dataToPass = urllib.parse.urlencode(dataToPass)
+    # dataToPass = urllib.parse.urlencode(dataToPass)
 
     authorization = clientKey + ":" + secretKey
     authorization = authorization.encode()
@@ -36,7 +36,7 @@ def loggedCallback(request):
 
     contentType = "application/x-www-form-urlencoded"
 
-    grantMeToken = requests.post(urlRequestToken, form=dataToPass, headers={"Authorization" : authorization, "Content-Type" : contentType})
+    grantMeToken = requests.post(urlRequestToken, data=dataToPass, headers={"Authorization" : authorization, "Content-Type" : contentType})
     grantMeToken = json.loads(grantMeToken.text)
     token = grantMeToken["access_token"]
 
