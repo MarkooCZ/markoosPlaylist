@@ -23,10 +23,9 @@ def loggedCallback(request):
     urlRequestToken = "https://accounts.spotify.com/api/token"
     
     code = request.GET.get("code")
-    grantType = "authorization_code"
-    redirectURL = "https://markoosplaylist.herokuapp.com/logged"
+    grantType = "client_credentials"
 
-    dataToPass = { "grant_type" : grantType, "code" : code, "redirect_uri" : redirectURL}
+    dataToPass = { "grant_type" : grantType}
     dataToPass = urllib.parse.urlencode(dataToPass)
 
     authorization = str(clientKey + ":" + secretKey)
