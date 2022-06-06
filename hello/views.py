@@ -36,7 +36,7 @@ def loggedCallback(request):
     contentType = "application/x-www-form-urlencoded"
 
     grantMeToken = requests.post(urlRequestToken, data=dataToPass, headers={"Authorization" : authorization, "Content-Type" : contentType})
-    grantMeToken = json.loads(grantMeToken)
+    grantMeToken = json.loads(grantMeToken.text)
     token = grantMeToken["access_token"]
 
     return render(request, "index.html", {"code" : code, "token" : token})
