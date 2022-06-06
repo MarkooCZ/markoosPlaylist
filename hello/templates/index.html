@@ -3,5 +3,11 @@
 
 {% block content %}
 <script src="{% static 'spotifyHandler.js' %}"></script>
-<button type="button" class="btn btn-success" onclick="spotifyLogin()">Show playlist</button>
+<div class="container" style="height: 100vh;">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="d-grid col-4">
+      <button type="button" class="btn btn-success" onclick="spotifyLogin()">Show Playlist</button>
+    </div>
+  </div>
+</div>
 {% endblock %}
