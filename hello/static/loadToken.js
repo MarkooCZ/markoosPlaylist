@@ -6,6 +6,6 @@ window.onload = function()
 	var refreshToken = hiddenRT.data;
 	localStorage.setItem("acccessToken", accessToken);
 	localStorage.setItem("refreshToken", refreshToken);
-	window.postMessage("hi", "https://accounts.spotify.com");
+	window.postMessage("hi", "*");
 	window.close()
 }
