@@ -35,7 +35,6 @@ def loggedCallback(request):
     authorizationPayload = 'Basic ' + str(authorization)
     authorizationPayload = authorizationPayload.replace("\"", "")
 
-
     contentType = "application/x-www-form-urlencoded"
 
     grantMeToken = requests.post(urlRequestToken, data=dataToPass, headers={"Authorization" : authorizationPayload, "Content-Type" : contentType})
