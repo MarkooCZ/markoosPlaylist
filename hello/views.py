@@ -30,10 +30,10 @@ def loggedCallback(request):
     dataToPass = urllib.parse.urlencode(dataToPass)
 
     authorization = clientKey + ":" + secretKey
-    authorization = authorization.encode("utf-8")
-    authorization = base64.b64encode(authorization)
+    # authorization = authorization.encode("utf-8")
+    # authorization = base64.b64encode(authorization)
     authorizationPayload = 'Basic ' + str(authorization)
-    authorizationPayload = authorizationPayload.replace("\"", "")
+    # authorizationPayload = authorizationPayload.replace("\"", "")
 
     contentType = "application/x-www-form-urlencoded"
 
