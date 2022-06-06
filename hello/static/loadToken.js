@@ -17,6 +17,6 @@ window.onload = function()
 	playlist = JSON.parse(request.responseText);
 	playlist.tracks.items.forEach(function(item)
 	{
-		divForPlaylist.innerHTML += JSON.stringify(item) + "<br>";
+		divForPlaylist.innerHTML += JSON.stringify(item.track.name) + "<br>";
 	});
 }
