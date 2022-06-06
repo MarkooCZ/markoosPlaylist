@@ -13,5 +13,5 @@ window.onload = function()
 	request.setRequestHeader("Content-Type", "application/json");
 	request.setRequestHeader("Authorization", "Bearer " + accessToken);
 	request.send( null );
-	divForPlaylist.innerHTML = request.responseText;
+	divForPlaylist.innerHTML = request.responseText + "Bearer " + accessToken;
 }
