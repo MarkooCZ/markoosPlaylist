@@ -13,10 +13,6 @@ def index(request):
     # print(r.text)
     # 4fZIyJn2wKb51QPNnWYnqt
     # r = requests.get("https://api.spotify.com/v1/playlists/4fZIyJn2wKb51QPNnWYnqt", headers={"Content-Type" : "application/json", "Authorization":""})
-    m = "hello"
-    m = m.encode()
-    m = base64.b64encode(m)
-
     return render(request, "index.html")
 
 def loggedCallback(request):
@@ -33,6 +29,7 @@ def loggedCallback(request):
     dataToPass = urllib.parse.urlencode(dataToPass)
 
     authorization = "Basic " + clientKey + ":" + secretKey
+    authorization = authorization.encode()
     authorization = base64.b64encode(authorization)
 
     contentType = "application/x-www-form-urlencoded"
