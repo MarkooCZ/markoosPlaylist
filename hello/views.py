@@ -1,6 +1,7 @@
 import requests
 import urllib
 import base64
+import json
 from django.conf import settings
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -34,9 +35,11 @@ def loggedCallback(request):
 
     contentType = "application/x-www-form-urlencoded"
 
-    posted = requests.post(urlRequestToken, data=dataToPass, headers={"Authorization" : authorization, "Content-Type" : contentType})
+    grantMeToken = requests.post(urlRequestToken, data=dataToPass, headers={"Authorization" : authorization, "Content-Type" : contentType})
+    grantMeToken = json.loads(grantMeToken)
+    token = grantMeToken["access_token"]
 
-    return render(request, "index.html", {"code" : code})
+    return render(request, "index.html", {"code" : code, "token" : token})
 
 def db(request):
 
