@@ -11,7 +11,7 @@ window.onload = function()
 	var request = new XMLHttpRequest();
 	request.open( "GET", imagineDragonsAlbumUrl, false ); // false for synchronous request
 	request.setRequestHeader("Content-Type", "application/json");
-	request.setRequestHeader("Authorization", "Bearer" + accessToken);
+	request.setRequestHeader("Authorization", "Bearer " + accessToken);
 	request.send( null );
 	divForPlaylist.innerHTML = request.responseText;
 }
