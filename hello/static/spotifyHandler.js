@@ -9,24 +9,14 @@ function spotifyLogin()
 
 window.onload = function()
 {
-	
+	// to be used
 }
 
 window.addEventListener('message', event =>
 {
 	if (event.origin.startsWith('https://markoosplaylist.herokuapp.com'))
 	{
-		var accessToken = localStorage.setItem("acccessToken");
-		var refreshToken = localStorage.setItem("refreshToken");
-		var divForPlaylist = document.getElementById("insertPlaylist")
-		var imagineDragonsAlbumUrl = "https://api.spotify.com/v1/albums/4fZIyJn2wKb51QPNnWYnqt";
-
-		var request = new XMLHttpRequest();
-		request.open( "GET", imagineDragonsAlbumUrl, false ); // false for synchronous request
-		request.setRequestHeader("Content-Type", "application/json");
-		request.setRequestHeader("Authorization", "Bearer" + accessToken);
-		request.send( null );
-		divForPlaylist.innerHTML = request.responseText;
+		// I will maybe finish some other day
 	}
 	else
 	{
