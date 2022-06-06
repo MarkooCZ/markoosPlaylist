@@ -32,7 +32,7 @@ def loggedCallback(request):
     authorization = clientKey + ":" + secretKey
     authorization = authorization.encode()
     authorization = base64.b64encode(authorization)
-    authorization = "Basic " + authorization
+    authorization = "Basic " + str(authorization)
 
     contentType = "application/x-www-form-urlencoded"
 
