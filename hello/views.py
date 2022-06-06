@@ -27,7 +27,7 @@ def loggedCallback(request):
     redirectURL = "https://markoosplaylist.herokuapp.com/logged"
 
     dataToPass = { "grant_type" : grantType, "code" : code, "redirect_uri" : redirectURL}
-    dataToPass = urllib.parse.urlencode(dataToPass)
+    # dataToPass = urllib.parse.urlencode(dataToPass)
 
     authorization = clientKey + ":" + secretKey
     authorization = authorization.encode("utf-8")
