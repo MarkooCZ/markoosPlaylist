@@ -3,7 +3,7 @@
 
 {% block content %}
 <script src="{% static 'loadToken.js' %}"></script>
-<input type="hidden" id="acccessToken" data="{{ token }}"/>
+<input type="hidden" id="acccessToken" value="{{ token }}"/>
 <!-- <input type="hidden" id="refreshToken" data="{{ refreshToken }}"/> -->
 <div id="insertPlaylist"></div>
 {% endblock %}

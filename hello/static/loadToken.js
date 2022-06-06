@@ -2,7 +2,7 @@ window.onload = function()
 {
 	var hiddenAT = document.getElementById("acccessToken");
 	// var hiddenRT = document.getElementById("refreshToken");
-	var accessToken = hiddenAT.data;
+	var accessToken = hiddenAT.value;
 	// var refreshToken = hiddenRT.data;
 	// window.top.postMessage("hi", "*"); Does not work, I can't get reference to the parent window
 	var divForPlaylist = document.getElementById("insertPlaylist")
